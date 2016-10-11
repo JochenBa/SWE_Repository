@@ -1,0 +1,90 @@
+Technikerschule Erlangen							
+Softwareentwicklung							
+Fragen zu git
+1. Was ist ein Branch?
+
+	Ein Branch ist eine Commit-Kette mit einem Zeiger auf das letzte Commit.
+
+2. Was ist der HEAD?
+
+	HEAD ist der Zeiger auf das letzte Commit des aktiven Branches
+
+3. Wie wechselt man den aktuellen Branch?
+
+	git checkout branch_xy
+
+4. Was passiert dabei im Working Area ? 
+
+	In die Working Area wird der Zustand der Software für den aktuell 	gewählten Branch geladen
+
+5. Was passiert mit Änderungen die nur im Working Area sind?
+
+	Diese gehen verloren, weil sie einfach überschrieben werden
+
+6. Kann man auch Commits auschecken?
+
+	Ja.  git checkout commit_sha1_nr 
+
+7. Was ist ein 'detached HEAD'?
+
+	Checkout von einem Commit auf den kein Branch zeigt
+
+8. Was passiert mit Commits in diesem Zustand?
+
+	Neue Commits im 'detached HEAD' gehen verloren
+
+9. Was macht das Kommando 'git log --graph' ?
+
+	Zeigt einen Commit Graphen
+
+10. Was ist der Sinn des Branching in Git?
+
+	Verschiedene Versionen parallel entwickeln
+
+11. Wie lässt sich ein neues Feature main branch einfügen?
+
+	git checkout master
+	----Feature realisieren 
+	git add *
+	git commit -m “Kommentar für Feature“
+
+12. Was ist ein ‘conflict’ in git?
+
+	Wenn Dateizustände zusammengefasst werden und dabei die 	Zustände widersprüchlich sind.
+
+13. Wie lässt sich ein Konflikt auflösen?
+
+	Commit erzeugen, welches Konfliktstellen bereinigt
+	
+
+14.  Wie lässt sich ein Branch löschen?
+
+git branch -d branchxy
+
+15.  Was ist die andere Möglichkeit neben merging in git?
+
+	Rebase  
+
+16. Was ist ein Rebase?
+
+Füge alle Commits des anderen Branch vor den Commits des aktuellen Branch ein. 
+
+
+17. Wie führt man ein Fast Forward durch?
+
+	Rebase gefolgt von merge 
+
+	Genauer 
+  1. dev von master abgeleitet
+  2. commit 89157 in master erzeugt
+  3. commit 2cabd in dev erzeugt
+
+	git checkout dev
+	git rebase master 			 → fügt vor commit 2cabd in dev Branch commit 89157 ein.
+                           jetzt hat dev alle commits von master plus commit 2cabd (heisst jetzt anders, weil Basis des Commits anders)
+
+	
+	git checkout master
+	git merge dev             master wird jetzt gleich dev gesetzt
+
+						
