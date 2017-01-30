@@ -21,13 +21,7 @@ public class RechteckTest {
     System.out.println("Test1");
     Assert.assertTrue(60 == myRechteck.berechneUmfang());   
   }
-  
-  @Test
-  public void derTest2() {
-    System.out.println("Test2");
-    Assert.assertNotNull(myRechteck.berechneInhalt());  
-  }
-  
+ 
   @After
   public void nach() {
     System.out.println("nach Test");
